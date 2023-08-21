@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "flight",
     "user",
+    "order",
     "airport",
 ]
 
