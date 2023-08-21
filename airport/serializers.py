@@ -6,13 +6,23 @@ from airport.models import Airport, Route
 class AirportSerializer(serializers.ModelSerializer):
     class Meta:
         model = Airport
-        fields = ("id", "name", "closest_bit_city")
+        fields = ("id", "name", "closest_big_city")
 
 
 class RouteSerializer(serializers.ModelSerializer):
-    source = AirportSerializer(many=False, read_only=False)
-    destination = AirportSerializer(many=False, read_only=False)
+    source = serializers.SlugRelatedField(
+        many=False,
+        read_only=False,
+        slug_field="name",
+        queryset=Airport.objects.all()
+    )
+    destination = serializers.SlugRelatedField(
+        many=False,
+        read_only=False,
+        slug_field="name",
+        queryset=Airport.objects.all()
+    )
 
     class Meta:
         model = Route
-        fields = ("source", "destination", "distance")
+        fields = ("id", "source", "destination", "distance")
