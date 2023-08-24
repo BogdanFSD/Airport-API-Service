@@ -7,7 +7,7 @@ from rest_framework import status
 
 from airport.models import Route
 from airport.serializers import RouteSerializer
-from airport.tests.test_airport_api import sample_airport
+from airport.tests.test_airport import sample_airport
 
 ROUTE_URL = reverse("airport:route-list")
 
