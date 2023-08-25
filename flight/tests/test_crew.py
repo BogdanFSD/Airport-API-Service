@@ -11,10 +11,7 @@ CREW_URL = reverse("flight:crew-list")
 
 
 def sample_crew(**params):
-    defaults = {
-        "first_name": "Test name",
-        "last_name": "Test last name"
-    }
+    defaults = {"first_name": "Test name", "last_name": "Test last name"}
     defaults.update(params)
 
     return Crew.objects.create(**defaults)
@@ -51,10 +48,7 @@ class AuthenticatedCrewApiTests(TestCase):
         self.assertEqual(res.data, serializer.data)
 
     def test_create_crew_forbidden(self):
-        payload = {
-            "first_name": "Test Forbidden",
-            "last_name": "Forbidden"
-        }
+        payload = {"first_name": "Test Forbidden", "last_name": "Forbidden"}
         res = self.client.post(CREW_URL, payload)
 
         self.assertEqual(res.status_code, status.HTTP_403_FORBIDDEN)
@@ -69,10 +63,7 @@ class AdminCrewApiTests(TestCase):
         self.client.force_authenticate(self.user)
 
     def test_create_crew(self):
-        payload = {
-            "first_name": "Test",
-            "last_name": "201"
-        }
+        payload = {"first_name": "Test", "last_name": "201"}
         res = self.client.post(CREW_URL, payload)
 
         self.assertEqual(res.status_code, status.HTTP_201_CREATED)

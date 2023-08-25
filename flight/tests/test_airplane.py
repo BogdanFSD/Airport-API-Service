@@ -16,7 +16,7 @@ def sample_airplane(**params):
         "name": "Test airport",
         "rows": 10,
         "seats_in_row": 6,
-        "airplane_type": sample_airplane_type()
+        "airplane_type": sample_airplane_type(),
     }
     defaults.update(params)
 
@@ -90,7 +90,7 @@ class AdminAirplaneApiTests(TestCase):
             "name": "Test airplane",
             "rows": 10,
             "seats_in_row": 6,
-            "airplane_type": sample_airplane_type()
+            "airplane_type": sample_airplane_type(),
         }
         res = self.client.post(AIRPLANE_URL, payload)
 
@@ -104,7 +104,7 @@ class AdminAirplaneApiTests(TestCase):
             "name": "Test airplane",
             "rows": 10,
             "seats_in_row": 6,
-            "airplane_type": sample_airplane_type()
+            "airplane_type": sample_airplane_type(),
         }
 
         airplane = sample_airplane()

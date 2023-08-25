@@ -12,7 +12,6 @@ class Order(models.Model):
         return f"Order {self.id} by {self.user.email} on {self.created_at.strftime('%Y-%m-%d %H:%M:%S')}"
 
 
-
 class Ticket(models.Model):
     row = models.IntegerField()
     seat = models.IntegerField()
@@ -30,8 +29,8 @@ class Ticket(models.Model):
                 raise error_to_raise(
                     {
                         ticket_attr_name: f"{ticket_attr_name} "
-                                          f"number must be in available range: "
-                                          f"(1, {count_attrs})"
+                        f"number must be in available range: "
+                        f"(1, {count_attrs})"
                     }
                 )
 
@@ -56,9 +55,7 @@ class Ticket(models.Model):
         )
 
     def __str__(self):
-        return (
-            f"{str(self.order)} (row: {self.row}, seat: {self.seat})"
-        )
+        return f"{str(self.order)} (row: {self.row}, seat: {self.seat})"
 
     class Meta:
         unique_together = ("flight", "row", "seat")

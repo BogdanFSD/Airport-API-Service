@@ -17,7 +17,7 @@ class OrderViewSet(
     mixins.CreateModelMixin,
     mixins.ListModelMixin,
     mixins.RetrieveModelMixin,
-    GenericViewSet
+    GenericViewSet,
 ):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer

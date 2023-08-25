@@ -11,16 +11,10 @@ class AirportSerializer(serializers.ModelSerializer):
 
 class RouteSerializer(serializers.ModelSerializer):
     source = serializers.SlugRelatedField(
-        many=False,
-        read_only=False,
-        slug_field="name",
-        queryset=Airport.objects.all()
+        many=False, read_only=False, slug_field="name", queryset=Airport.objects.all()
     )
     destination = serializers.SlugRelatedField(
-        many=False,
-        read_only=False,
-        slug_field="name",
-        queryset=Airport.objects.all()
+        many=False, read_only=False, slug_field="name", queryset=Airport.objects.all()
     )
 
     class Meta:
