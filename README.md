@@ -1,6 +1,11 @@
 # Airport-API-Service
 Airport management API service created with DRF
 
+## Structure
+
+
+![Database Structure](images/db_diagram.jpg)
+
 
 ## Features
 
