@@ -18,4 +18,4 @@ router.register("crew", CrewViewSet)
 router.register("flight", FlightViewSet)
 
 
-urlpatterns = [] + router.urls
+urlpatterns = router.urls
