@@ -36,4 +36,5 @@ class Flight(models.Model):
     arrival_time = models.DateTimeField()
 
     def __str__(self):
-        return self.route.__str__()
+        return str(self.route)
+
