@@ -28,5 +28,4 @@ class OrderViewSet(
         serializer.save(user=self.request.user)
 
     def get_queryset(self):
-        self.queryset.filter(user=self.request.user)
         return self.queryset.filter(user=self.request.user)
